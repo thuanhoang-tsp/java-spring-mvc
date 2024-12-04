@@ -1,5 +1,7 @@
 package com.example.java_spring_mvc.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.java_spring_mvc.domain.User;
@@ -15,6 +17,14 @@ public class UserService {
 
     public String handleHello() {
         return "Hello from Service";
+    }
+
+    public List<User> getallUsers() {
+        return userRepository.findAll();
+    }
+
+    public List<User> getallUsersByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     public User handleSaveUser(User user) {
