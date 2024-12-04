@@ -6,18 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.example.java_spring_mvc.domain.User;
+import com.example.java_spring_mvc.repository.UserRepository;
 import com.example.java_spring_mvc.service.UserService;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class UserController {
-    private UserService userService;
+    private final UserService userService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, UserRepository userRepository) {
         this.userService = userService;
     }
 
@@ -36,8 +33,8 @@ public class UserController {
     }
 
     @PostMapping("/admin/user/create1")
-    public String createUserPage(@ModelAttribute("user") User user) {
-        System.out.println(">>>> Data" + user);
-        return "home";
+    public String createUserPage(Model model, @ModelAttribute("user") User user) {
+        userService.handleSaveUser(user);
+        return "redirect:/";
     }
 }
