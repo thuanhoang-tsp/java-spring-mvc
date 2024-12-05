@@ -26,7 +26,9 @@
                         <div class="col-12 mx-auto">
                             <div class="d-flex justify-content-between">
                                 <h3>Table users</h3>
-                                <button class="btn--main"><a href="/admin/user/create">Create a user</a></button>
+                                <button class="btn--main" onclick="window.location.href='/admin/user/create'">
+                                    Create a user
+                                </button>
                             </div>
                             <hr />
                             <table class="antd-table">
@@ -39,18 +41,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <p style="text-decoration: underline; margin-bottom: 0; color: #4072D0">Jill
-                                                Smith</p>
-                                        </td>
-                                        <td>jillsmith@gmail.com</td>
-                                        <td>
-                                            <button class="btn--warning">Update</button>
-                                            <button class="btn--danger">Delete</button>
-                                        </td>
-                                    </tr>
+
+                                    <c:forEach var="user" items="${usersList}">
+                                        <tr>
+                                            <td>${user.id}</td>
+                                            <td>
+                                                <p
+                                                    style="text-decoration: underline; margin-bottom: 0; color: #4072D0; cursor: pointer;">
+                                                    ${user.fullName}
+                                                </p>
+                                            </td>
+                                            <td>${user.email}</td>
+                                            <td>
+                                                <button class="btn--warning">Update</button>
+                                                <button class="btn--danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>

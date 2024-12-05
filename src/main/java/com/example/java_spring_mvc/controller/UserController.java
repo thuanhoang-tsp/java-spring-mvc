@@ -29,18 +29,20 @@ public class UserController {
 
     @GetMapping("/admin/user")
     public String getUserPage(Model model) {
+        List<User> users = userService.getallUsers();
+        model.addAttribute("usersList", users);
         return "admin/user/table-user";
     }
 
     @GetMapping("/admin/user/create")
     public String createUserPage(Model model) {
         model.addAttribute("user", new User());
-        return "/admin/user/create";
+        return "admin/user/create";
     }
 
-    @PostMapping("/admin/user/create1")
+    @PostMapping("/admin/user/create")
     public String createUserPage(Model model, @ModelAttribute("user") User user) {
         userService.handleSaveUser(user);
-        return "redirect:/";
+        return "redirect:/admin/user";
     }
 }
