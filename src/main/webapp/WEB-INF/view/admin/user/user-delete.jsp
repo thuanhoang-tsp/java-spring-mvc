@@ -7,7 +7,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Update user</title>
+                <title>Delete user</title>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                     crossorigin="anonymous"></script>
@@ -24,31 +24,17 @@
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-5 col-12 mx-auto">
-                            <h3>Update user</h3>
+                            <h3>Delete user</h3>
                             <hr />
-                            <form:form method="post" action="/admin/user/update" modelAttribute="user">
+                            <div class="alert alert-danger">
+                                Are you sure to delete this user ?
+                            </div>
+                            <form:form method="post" action="/admin/user/delete" modelAttribute="user">
                                 <div class="mb-3" style="display: none;">
                                     <form:label path="id">User ID: </form:label>
-                                    <form:input path="id" class="disabled" disabled="true" />
+                                    <form:input path="id" class="disabled" value="${id}" />
                                 </div>
-                                <div class="mb-3">
-                                    <form:label path="email">Email: </form:label>
-                                    <form:input type="email" path="email" placeholder="Enter email" class="disabled"
-                                        disabled="true" />
-                                </div>
-                                <div class="mb-3">
-                                    <form:label path="phone">Phone number: </form:label>
-                                    <form:input type="text" path="phone" placeholder="Enter phone" />
-                                </div>
-                                <div class="mb-3">
-                                    <form:label path="fullName">Full Name: </form:label>
-                                    <form:input type="text" path="fullName" placeholder="Enter full name" />
-                                </div>
-                                <div class="mb-3">
-                                    <form:label path="address">Address: </form:label>
-                                    <form:input type="text" path="address" placeholder="Enter address" />
-                                </div>
-                                <button type="submit" class="btn btn-warning">Update</button>
+                                <button type="submit" class="btn--danger">Delete</button>
                             </form:form>
                         </div>
                     </div>

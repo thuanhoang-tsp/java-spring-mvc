@@ -54,7 +54,8 @@
                                             <td>
                                                 <button class="btn--warning"
                                                     onclick="window.location.href='/admin/user/update/${user.id}'">Update</button>
-                                                <button class="btn--danger">Delete</button>
+                                                <button class="btn--danger"
+                                                    onclick="window.location.href='/admin/user/delete/${user.id}'">Delete</button>
                                             </td>
                                         </tr>
                                     </c:forEach>

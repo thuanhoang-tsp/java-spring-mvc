@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -69,13 +70,25 @@ public class UserController {
     public String updateUserPage(Model model, @ModelAttribute("user") User user) {
         User userById = userService.getUserById(user.getId());
         if (userById != null) {
-            System.out.println(">>> ??????????????????");
             userById.setAddress(user.getAddress());
             userById.setFullName(user.getFullName());
             userById.setPhone(user.getPhone());
 
-            userService.handleSaveUser(user);
+            userService.handleSaveUser(userById);
         }
+        return "redirect:/admin/user";
+    }
+
+    @GetMapping("/admin/user/delete/{id}")
+    public String createUserPage(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        model.addAttribute("user", new User());
+        return "admin/user/user-delete";
+    }
+
+    @PostMapping("/admin/user/delete")
+    public String deleteUserPage(Model model, @ModelAttribute("user") User user) {
+        userService.handleDeleteUser(user.getId());
         return "redirect:/admin/user";
     }
 }
