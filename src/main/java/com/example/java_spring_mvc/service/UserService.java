@@ -1,6 +1,7 @@
 package com.example.java_spring_mvc.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -23,8 +24,8 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public List<User> getallUsersByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public User getUserById(long id) {
+        return userRepository.findById(id);
     }
 
     public User handleSaveUser(User user) {

@@ -1,16 +1,19 @@
 package com.example.java_spring_mvc.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.java_spring_mvc.domain.User;
 import com.example.java_spring_mvc.repository.UserRepository;
 import com.example.java_spring_mvc.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 public class UserController {
@@ -22,8 +25,6 @@ public class UserController {
 
     @GetMapping("/")
     public String getHomePage(Model model) {
-        List<User> user = userService.getallUsersByEmail("thuangg1222111@gmail.com");
-        model.addAttribute("user", user);
         return "home";
     }
 
@@ -31,18 +32,50 @@ public class UserController {
     public String getUserPage(Model model) {
         List<User> users = userService.getallUsers();
         model.addAttribute("usersList", users);
-        return "admin/user/table-user";
+        return "admin/user/user-table";
     }
 
     @GetMapping("/admin/user/create")
     public String createUserPage(Model model) {
         model.addAttribute("user", new User());
-        return "admin/user/create";
+        return "admin/user/user-create";
     }
 
     @PostMapping("/admin/user/create")
     public String createUserPage(Model model, @ModelAttribute("user") User user) {
         userService.handleSaveUser(user);
+        return "redirect:/admin/user";
+    }
+
+    @GetMapping("/admin/user/{userId}")
+    public String getUserDetailPage(Model model, @PathVariable long userId) {
+        User user = userService.getUserById(userId);
+
+        model.addAttribute("userId", userId);
+        model.addAttribute("userData", user);
+        return "admin/user/user-detail";
+    }
+
+    @GetMapping("/admin/user/update/{userId}")
+    public String updateUserPage(Model model, @PathVariable long userId) {
+        User user = userService.getUserById(userId);
+
+        model.addAttribute("userId", userId);
+        model.addAttribute("user", user);
+        return "admin/user/user-update";
+    }
+
+    @PostMapping("/admin/user/update")
+    public String updateUserPage(Model model, @ModelAttribute("user") User user) {
+        User userById = userService.getUserById(user.getId());
+        if (userById != null) {
+            System.out.println(">>> ??????????????????");
+            userById.setAddress(user.getAddress());
+            userById.setFullName(user.getFullName());
+            userById.setPhone(user.getPhone());
+
+            userService.handleSaveUser(user);
+        }
         return "redirect:/admin/user";
     }
 }

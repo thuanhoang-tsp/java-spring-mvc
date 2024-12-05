@@ -209,3 +209,15 @@ label {
     border: 1px solid var(--second-border);
     font-weight: var(--fw-500);
 }
+
+a.link {
+    text-decoration: underline;
+    color: #4072D0;
+    cursor: pointer;
+}
+
+.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #d4d4d4;
+}

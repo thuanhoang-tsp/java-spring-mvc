@@ -7,7 +7,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
+                <title>List user</title>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                     crossorigin="anonymous"></script>
@@ -46,14 +46,14 @@
                                         <tr>
                                             <td>${user.id}</td>
                                             <td>
-                                                <p
-                                                    style="text-decoration: underline; margin-bottom: 0; color: #4072D0; cursor: pointer;">
+                                                <a href="/admin/user/${user.id}" class="link">
                                                     ${user.fullName}
-                                                </p>
+                                                </a>
                                             </td>
                                             <td>${user.email}</td>
                                             <td>
-                                                <button class="btn--warning">Update</button>
+                                                <button class="btn--warning"
+                                                    onclick="window.location.href='/admin/user/update/${user.id}'">Update</button>
                                                 <button class="btn--danger">Delete</button>
                                             </td>
                                         </tr>
