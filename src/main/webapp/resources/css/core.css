@@ -1,7 +1,41 @@
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/* Reset all elements to ensure consistent appearance across browsers */
+:root {
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+
+    --primary-color: #4072d0;
+    --text-color: #344054;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+
+    --primary-border: #98a2b3;
+    --second-border: #d9d9d9;
+    --third-border: #d0d5dd;
+
+    --rounded-4: 4px;
+    --rounded-8: 8px;
+    --rounded-6: 6px;
+    --rounded-10: 10px;
+    --rounded-12: 12px;
+    --rounded-full: 100%;
+
+    --space-2: 2px;
+    --space-4: 4px;
+    --space-6: 6px;
+    --space-8: 8px;
+    --space-10: 10px;
+    --space-12: 12px;
+    --space-14: 14px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-22: 22px;
+    --space-24: 24px;
+}
+
 *,
 *::before,
 *::after {
@@ -15,7 +49,7 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #f2f4f7;
     color: #344054;
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     line-height: 1.5;
 }
 
@@ -35,12 +69,12 @@ button {
     border: none;
     outline: none;
     padding: 0;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: var(--font-size-sm);
+    font-weight: var(--fw-600);
     color: #fff;
     text-align: center;
     display: inline-block;
-    border-radius: 8px;
+    border-radius: var(--rounded-8);
 }
 
 input,
@@ -50,8 +84,8 @@ button {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    border-radius: 8px;
-    border: 1px solid #d0d5dd;
+    border-radius: var(--rounded-8);
+    border: 1px solid var(--third-border);
 }
 
 button:focus,
@@ -59,52 +93,62 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #4072d0;
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
 hr {
     border: 0;
-    border-top: 1px solid #d0d5dd;
-    margin: 20px 0;
+    border-top: 1px solid var(--second-border);
+    margin: var(--space-20) 0;
+}
+
+button {
+    padding: var(--space-6) var(--space-14);
+    font-size: var(--font-size-sm);
+    font-weight: var(--fw-600);
+    line-height: 20px;
+    min-width: 70px;
 }
 
 .btn--main {
-    background-color: #4072d0;
+    background-color: var(--primary-color);
     color: white;
-    padding: 6px 14px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    min-width: 70px;
 }
 
 .btn--close {
     background-color: white;
-    border: 1px solid #98a2b3;
+    border: 1px solid var(--primary-border);
     color: #475467;
-    padding: 6px 14px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    min-width: 70px;
+}
+
+.btn--danger {
+    background-color: #ff7875;
+    border: 1px solid var(--primary-border);
+    color: #fff;
+}
+
+.btn--warning {
+    background-color: #faad14;
+    border: 1px solid var(--primary-border);
+    color: #fff;
 }
 
 input {
-    padding: 8px 14px;
+    padding: var(--space-8) var(--space-14);
     height: 40px;
-    border-radius: 8px;
+    border-radius: var(--rounded-8);
     background-color: white;
     color: #667085;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: var(--font-size-md);
+    font-weight: var(--fw-400);
     line-height: 24px;
     width: 100%;
     transition: all 0.3s ease-in-out;
 }
 
 input:focus {
-    border-color: #4072d0;
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
@@ -112,10 +156,10 @@ input:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #d0d5dd;
-    border-radius: 4px;
+    width: var(--space-16);
+    height: var(--space-16);
+    border: 1px solid var(--third-border);
+    border-radius: var(--rounded-4);
     background-color: white;
     position: relative;
     cursor: pointer;
@@ -124,20 +168,44 @@ input:focus {
 }
 
 .ant-checkbox:checked {
-    background-color: #4072d0;
-    border-color: #4072d0;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .ant-checkbox:focus,
 .ant-checkbox:hover {
-    border-color: #4072d0;
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
 label {
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: var(--fw-500);
+    font-size: var(--font-size-sm);
     color: #344054;
-    margin-bottom: 6px;
+    margin-bottom: var(--space-6);
     width: 100%;
+}
+
+.antd-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--rounded-8);
+    overflow: hidden;
+    border: 1px solid var(--second-border);
+}
+
+.antd-table th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--space-12) var(--space-16);
+    text-align: left;
+    font-weight: var(--fw-500);
+    border: 1px solid var(--second-border);
+}
+
+.antd-table td {
+    padding: var(--space-12) var(--space-16);
+    border: 1px solid var(--second-border);
+    font-weight: var(--fw-500);
 }

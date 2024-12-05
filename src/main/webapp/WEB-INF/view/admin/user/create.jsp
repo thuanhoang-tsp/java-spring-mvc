@@ -24,7 +24,7 @@
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-5 col-12 mx-auto">
-                            <h3>Create dd111</h3>
+                            <h3>Create user</h3>
                             <hr />
                             <form:form method="post" action="/admin/user/create1" modelAttribute="user">
                                 <div class="mb-3">

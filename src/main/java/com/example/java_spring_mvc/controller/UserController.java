@@ -23,13 +23,17 @@ public class UserController {
     @GetMapping("/")
     public String getHomePage(Model model) {
         List<User> user = userService.getallUsersByEmail("thuangg1222111@gmail.com");
-        System.out.println(">>>>>>>> " + user);
         model.addAttribute("user", user);
         return "home";
     }
 
     @GetMapping("/admin/user")
     public String getUserPage(Model model) {
+        return "admin/user/table-user";
+    }
+
+    @GetMapping("/admin/user/create")
+    public String createUserPage(Model model) {
         model.addAttribute("user", new User());
         return "/admin/user/create";
     }
