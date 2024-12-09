@@ -5,6 +5,8 @@
     --font-size-md: 16px;
     --font-size-lg: 18px;
 
+    --font-main: 'Inter', sans-serif;
+
     --primary-color: #4072d0;
     --text-color: #344054;
 
@@ -21,6 +23,7 @@
     --rounded-6: 6px;
     --rounded-10: 10px;
     --rounded-12: 12px;
+    --rounded-16: 16px;
     --rounded-full: 100%;
 
     --space-2: 2px;
@@ -46,9 +49,9 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-main);
     background-color: #f2f4f7;
-    color: #344054;
+    color: var(--text-color);
     font-size: var(--font-size-sm);
     line-height: 1.5;
 }
