@@ -31,32 +31,47 @@
                                 </ol>
                                 <div class="container mt-5">
                                     <div class="row">
-                                        <div class="col-md-6 col-12 mx-auto">
+                                        <div class="col-12 mx-auto">
                                             <h3>Create user</h3>
                                             <hr />
-                                            <form:form method="post" action="/admin/user/create" modelAttribute="user">
-                                                <div class="mb-3">
+                                            <form:form method="post" action="/admin/user/create" modelAttribute="user"
+                                                class="row">
+                                                <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="email">Email: </form:label>
                                                     <form:input type="email" placeholder="Enter email" path="email" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="password">Password: </form:label>
                                                     <form:input type="password" placeholder="Enter password"
                                                         path="password" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="phone">Phone number: </form:label>
                                                     <form:input type="text" placeholder="Enter phone" path="phone" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="fullName">Full Name: </form:label>
                                                     <form:input type="text" placeholder="Enter full name"
                                                         path="fullName" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-12">
                                                     <form:label path="address">Address: </form:label>
                                                     <form:input type="text" placeholder="Enter address"
                                                         path="address" />
+                                                </div>
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label path="avatarfile">Role: </label>
+                                                    <select class="form-select antd-select"
+                                                        aria-label="Default select example">
+                                                        <option selected>Select role</option>
+                                                        <option value="USER">USER</option>
+                                                        <option value="ADMIN">ADMIN</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label path="avatarfile">Avatar: </label>
+                                                    <input type="file" placeholder="Select file" id="avatarfile"
+                                                        accept=".png, .jpg, .jpeg" />
                                                 </div>
                                                 <button type="submit" class="btn--main">Create</button>
                                             </form:form>

@@ -100,6 +100,15 @@ textarea:focus {
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
+select,
+option {
+    cursor: pointer;
+}
+
+.form-select:focus {
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+}
+
 hr {
     border: 0;
     border-top: 1px solid var(--second-border);
@@ -137,7 +146,8 @@ button {
     color: #fff;
 }
 
-input {
+input,
+.antd-select {
     padding: var(--space-8) var(--space-14);
     height: 40px;
     border-radius: var(--rounded-8);
