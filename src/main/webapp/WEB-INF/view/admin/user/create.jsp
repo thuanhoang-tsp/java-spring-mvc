@@ -14,6 +14,20 @@
                 <link href="/css/styles.css" rel="stylesheet" />
                 <link href="/css/core.css" rel="stylesheet" />
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+                    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+                    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <script>
+                    $(document).ready(() => {
+                        const avatarFile = $("#avatarFile");
+                        avatarFile.change((e) => {
+                            const imgUrl = URL.createObjectURL(e.target.files[0]);
+                            console.log("imgUrl", imgUrl);
+                            $("#avatarPreview").attr("src", imgUrl);
+                            $("#avatarPreview").css({ "display": "block" })
+                        })
+                    })
+                </script>
             </head>
 
             <body class="sb-nav-fixed">
@@ -70,10 +84,17 @@
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label path="avatarfile">Avatar: </label>
-                                                    <input type="file" placeholder="Select file" id="avatarfile"
+                                                    <input type="file" placeholder="Select file" id="avatarFile"
                                                         accept=".png, .jpg, .jpeg" />
                                                 </div>
-                                                <button type="submit" class="btn--main">Create</button>
+                                                <div class="mb-3 col-12">
+                                                    <img src="" id="avatarPreview" alt=""
+                                                        style="display: none; width: 100px;">
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" class="btn--main"
+                                                        style="width: 100%;">Create</button>
+                                                </div>
                                             </form:form>
                                         </div>
                                     </div>
