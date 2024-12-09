@@ -1,4 +1,4 @@
-package com.example.java_spring_mvc.controller;
+package com.example.java_spring_mvc.controller.admin;
 
 import java.util.List;
 
@@ -30,13 +30,13 @@ public class UserController {
     public String getUserPage(Model model) {
         List<User> users = userService.getallUsers();
         model.addAttribute("usersList", users);
-        return "admin/user/user-table";
+        return "admin/user/show";
     }
 
     @GetMapping("/admin/user/create")
     public String createUserPage(Model model) {
         model.addAttribute("user", new User());
-        return "admin/user/user-create";
+        return "admin/user/create";
     }
 
     @PostMapping("/admin/user/create")
@@ -51,7 +51,7 @@ public class UserController {
 
         model.addAttribute("userId", userId);
         model.addAttribute("userData", user);
-        return "admin/user/user-detail";
+        return "admin/user/detail";
     }
 
     @GetMapping("/admin/user/update/{userId}")
@@ -60,7 +60,7 @@ public class UserController {
 
         model.addAttribute("userId", userId);
         model.addAttribute("user", user);
-        return "admin/user/user-update";
+        return "admin/user/update";
     }
 
     @PostMapping("/admin/user/update")
@@ -80,7 +80,7 @@ public class UserController {
     public String createUserPage(Model model, @PathVariable long id) {
         model.addAttribute("id", id);
         model.addAttribute("user", new User());
-        return "admin/user/user-delete";
+        return "admin/user/delete";
     }
 
     @PostMapping("/admin/user/delete")
