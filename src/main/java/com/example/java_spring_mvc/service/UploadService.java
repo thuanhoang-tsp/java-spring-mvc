@@ -18,7 +18,7 @@ public class UploadService {
         this.servletContext = servletContext;
     }
 
-    public void handleSaveUploadFile(MultipartFile file, String targetFolder) {
+    public String handleSaveUploadFile(MultipartFile file, String targetFolder) {
         try {
             String rootPath = servletContext.getRealPath("/resources/images");
             byte[] bytes = file.getBytes();
@@ -44,16 +44,18 @@ public class UploadService {
              * 01-01-1970, dùng để đảm bảo tên tệp là duy nhất.
              * file.getOriginalFilename(): Tên gốc của tệp tin, được lấy từ tệp tải lên.
              */
-            File serverFile = new File(dir.getAbsolutePath() + File.separator + System.currentTimeMillis() + "_"
-                    + file.getOriginalFilename());
+            String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
+            File serverFile = new File(dir.getAbsolutePath() + File.separator + fileName);
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
             stream.write(bytes);
             stream.close();
 
-            // userService.handleSaveUser(user);
+            return fileName;
 
         } catch (IOException e) {
             e.printStackTrace();
+
+            return null;
         }
     }
 }
