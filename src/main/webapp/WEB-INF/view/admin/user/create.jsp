@@ -49,7 +49,7 @@
                                             <h3>Create user</h3>
                                             <hr />
                                             <form:form method="post" action="/admin/user/create" modelAttribute="user"
-                                                class="row">
+                                                class="row" enctype="multipart/form-data">
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="email">Email: </form:label>
                                                     <form:input type="email" placeholder="Enter email" path="email" />
@@ -75,17 +75,15 @@
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label path="avatarfile">Role: </label>
-                                                    <select class="form-select antd-select"
-                                                        aria-label="Default select example">
-                                                        <option selected>Select role</option>
-                                                        <option value="USER">USER</option>
-                                                        <option value="ADMIN">ADMIN</option>
-                                                    </select>
+                                                    <form:select class="form-select antd-select" path="role.name">
+                                                        <form:option value="USER">USER</form:option>
+                                                        <form:option value="ADMIN">ADMIN</form:option>
+                                                    </form:select>
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label path="avatarfile">Avatar: </label>
                                                     <input type="file" placeholder="Select file" id="avatarFile"
-                                                        accept=".png, .jpg, .jpeg" />
+                                                        accept=".png, .jpg, .jpeg" name="avatarFile" />
                                                 </div>
                                                 <div class="mb-3 col-12">
                                                     <img src="" id="avatarPreview" alt=""

@@ -1,5 +1,9 @@
 package com.example.java_spring_mvc.controller.admin;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -10,15 +14,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.java_spring_mvc.domain.User;
 import com.example.java_spring_mvc.repository.UserRepository;
+import com.example.java_spring_mvc.service.UploadService;
 import com.example.java_spring_mvc.service.UserService;
+
+import jakarta.servlet.ServletContext;
+
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class UserController {
     private final UserService userService;
+    private final UploadService uploadService;
 
-    public UserController(UserService userService, UserRepository userRepository) {
+    public UserController(UserService userService, UploadService uploadService) {
         this.userService = userService;
+        this.uploadService = uploadService;
     }
 
     @GetMapping("/")
@@ -40,8 +52,10 @@ public class UserController {
     }
 
     @PostMapping("/admin/user/create")
-    public String createUserPage(Model model, @ModelAttribute("user") User user) {
-        userService.handleSaveUser(user);
+    public String createUserPage(Model model, @ModelAttribute("user") User user,
+            @RequestParam("avatarFile") MultipartFile file) {
+        uploadService.handleSaveUploadFile(file, "avatar");
+
         return "redirect:/admin/user";
     }
 
