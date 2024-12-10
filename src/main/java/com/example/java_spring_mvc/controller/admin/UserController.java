@@ -80,12 +80,19 @@ public class UserController {
     }
 
     @PostMapping("/admin/user/update")
-    public String updateUserPage(Model model, @ModelAttribute("user") User user) {
+    public String updateUserPage(Model model, @RequestParam("avatarFile") MultipartFile file,
+            @ModelAttribute("user") User user) {
         User userById = userService.getUserById(user.getId());
         if (userById != null) {
             userById.setAddress(user.getAddress());
             userById.setFullName(user.getFullName());
             userById.setPhone(user.getPhone());
+            userById.setRole(userService.getRoleByName(user.getRole().getName()));
+
+            if (file != null && !file.isEmpty()) {
+                String avatar = uploadService.handleSaveUploadFile(file, "avatar");
+                userById.setAvatar(avatar);
+            }
 
             userService.handleSaveUser(userById);
         }

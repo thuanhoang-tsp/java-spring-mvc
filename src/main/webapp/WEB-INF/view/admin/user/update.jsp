@@ -14,6 +14,19 @@
                 <link href="/css/styles.css" rel="stylesheet" />
                 <link href="/css/core.css" rel="stylesheet" />
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+                    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+                    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <script>
+                    $(document).ready(() => {
+                        const avatarFile = $("#avatarFile");
+                        avatarFile.change((e) => {
+                            const imgUrl = URL.createObjectURL(e.target.files[0]);
+                            console.log("imgUrl", imgUrl);
+                            $("#avatarPreview").attr("src", imgUrl);
+                        })
+                    })
+                </script>
             </head>
 
             <body class="sb-nav-fixed">
@@ -35,31 +48,51 @@
                                         <div class="col-12 mx-auto">
                                             <h3>Update user</h3>
                                             <hr />
-                                            <form:form method="post" action="/admin/user/update" modelAttribute="user">
-                                                <div class="mb-3" style="display: none;">
+                                            <form:form method="post" action="/admin/user/update" modelAttribute="user"
+                                                class="row" enctype="multipart/form-data">
+                                                <div class="mb-3 col-12 col-md-6" style="display: none;">
                                                     <form:label path="id">User ID: </form:label>
-                                                    <form:input path="id" class="disabled" disabled="true" />
+                                                    <form:input path="id" class="disabled" readonly="true" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="email">Email: </form:label>
                                                     <form:input type="email" path="email" placeholder="Enter email"
-                                                        class="disabled" disabled="true" />
+                                                        class="disabled" readonly="true" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="phone">Phone number: </form:label>
                                                     <form:input type="text" path="phone" placeholder="Enter phone" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="fullName">Full Name: </form:label>
                                                     <form:input type="text" path="fullName"
                                                         placeholder="Enter full name" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="address">Address: </form:label>
                                                     <form:input type="text" path="address"
                                                         placeholder="Enter address" />
                                                 </div>
-                                                <button type="submit" class="btn btn--warning">Update</button>
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label path="avatarfile">Role: </label>
+                                                    <form:select class="form-select antd-select" path="role.name">
+                                                        <form:option value="USER">USER</form:option>
+                                                        <form:option value="ADMIN">ADMIN</form:option>
+                                                    </form:select>
+                                                </div>
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label path="avatarfile">Avatar: </label>
+                                                    <input type="file" placeholder="Select file" id="avatarFile"
+                                                        accept=".png, .jpg, .jpeg" name="avatarFile" />
+                                                </div>
+                                                <div class="mb-3 col-12">
+                                                    <img src="/images/avatar/${user.avatar}" id="avatarPreview" alt=""
+                                                        style="width: 100px;">
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" class="btn btn--warning"
+                                                        style="width: 100%;">Update</button>
+                                                </div>
                                             </form:form>
                                         </div>
                                     </div>

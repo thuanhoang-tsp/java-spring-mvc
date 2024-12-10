@@ -40,6 +40,7 @@
                                                 <li class="list-group-item">Email: ${userData.email}</li>
                                                 <li class="list-group-item">Phone: ${userData.phone}</li>
                                                 <li class="list-group-item">Address: ${userData.address}</li>
+                                                <li class="list-group-item">Role: ${userData.role.name}</li>
                                             </ul>
                                             <hr />
                                             <button onclick="window.location.href='/admin/user'"

@@ -136,13 +136,11 @@ button {
 
 .btn--danger {
     background-color: #ff7875;
-    border: 1px solid var(--primary-border);
     color: #fff;
 }
 
 .btn--warning {
     background-color: #faad14;
-    border: 1px solid var(--primary-border);
     color: #fff;
 }
 

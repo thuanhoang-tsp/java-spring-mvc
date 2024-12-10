@@ -44,6 +44,7 @@
                                                     <th>ID</th>
                                                     <th>Full Name</th>
                                                     <th>Email</th>
+                                                    <th>Role</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -58,6 +59,7 @@
                                                             </a>
                                                         </td>
                                                         <td>${user.email}</td>
+                                                        <td>${user.role.name}</td>
                                                         <td>
                                                             <button class="btn--warning"
                                                                 onclick="window.location.href='/admin/user/update/${user.id}'">Update</button>
