@@ -2,7 +2,6 @@ package com.example.java_spring_mvc.controller.admin;
 
 import java.util.List;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,11 +28,6 @@ public class UserController {
         this.userService = userService;
         this.uploadService = uploadService;
         this.passwordEncoder = passwordEncoder;
-    }
-
-    @GetMapping("/")
-    public String getHomePage(Model model) {
-        return "home";
     }
 
     @GetMapping("/admin/user")
