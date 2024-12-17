@@ -10,6 +10,7 @@
             <meta name="description" content="" />
             <meta name="author" content="" />
             <title>Product - LaptopShop Admin</title>
+            <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
             <link href="/css/styles.css" rel="stylesheet" />
             <link href="/css/core.css" rel="stylesheet" />
             <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -34,7 +35,7 @@
                                             <h3>Table users</h3>
                                             <button class="btn--main"
                                                 onclick="window.location.href='/admin/user/create'">
-                                                Create a user
+                                                Create
                                             </button>
                                         </div>
                                         <hr />

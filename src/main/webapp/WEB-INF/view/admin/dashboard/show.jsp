@@ -10,6 +10,7 @@
             <meta name="description" content="" />
             <meta name="author" content="" />
             <title>Dashboard - LaptopShop Admin</title>
+            <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
             <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
             <link href="/css/styles.css" rel="stylesheet" />
             <link href="/css/core.css" rel="stylesheet" />

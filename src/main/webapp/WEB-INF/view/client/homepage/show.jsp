@@ -6,6 +6,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>LaptopShop</title>
+            <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link
@@ -68,8 +69,8 @@
                                             <div class="rounded position-relative fruite-item"
                                                 style="cursor: pointer; background-color: #fff;">
                                                 <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg"
-                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
+                                                        alt="">
                                                 </div>
                                                 <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
                                                     style="top: 10px; left: 10px;">Apple</div>
@@ -92,8 +93,8 @@
                                             <div class="rounded position-relative fruite-item"
                                                 style="cursor: pointer; background-color: #fff;">
                                                 <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg"
-                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
+                                                        alt="">
                                                 </div>
                                                 <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
                                                     style="top: 10px; left: 10px;">Apple</div>
@@ -116,8 +117,8 @@
                                             <div class="rounded position-relative fruite-item"
                                                 style="cursor: pointer; background-color: #fff;">
                                                 <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg"
-                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
+                                                        alt="">
                                                 </div>
                                                 <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
                                                     style="top: 10px; left: 10px;">Apple</div>
@@ -140,8 +141,8 @@
                                             <div class="rounded position-relative fruite-item"
                                                 style="cursor: pointer; background-color: #fff;">
                                                 <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg"
-                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
+                                                        alt="">
                                                 </div>
                                                 <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
                                                     style="top: 10px; left: 10px;">Apple</div>
@@ -164,8 +165,8 @@
                                             <div class="rounded position-relative fruite-item"
                                                 style="cursor: pointer; background-color: #fff;">
                                                 <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg"
-                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
+                                                        alt="">
                                                 </div>
                                                 <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
                                                     style="top: 10px; left: 10px;">Apple</div>
@@ -188,8 +189,8 @@
                                             <div class="rounded position-relative fruite-item"
                                                 style="cursor: pointer; background-color: #fff;">
                                                 <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg"
-                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
+                                                        alt="">
                                                 </div>
                                                 <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
                                                     style="top: 10px; left: 10px;">Apple</div>
@@ -212,8 +213,8 @@
                                             <div class="rounded position-relative fruite-item"
                                                 style="cursor: pointer; background-color: #fff;">
                                                 <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg"
-                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
+                                                        alt="">
                                                 </div>
                                                 <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
                                                     style="top: 10px; left: 10px;">Apple</div>
@@ -236,8 +237,8 @@
                                             <div class="rounded position-relative fruite-item"
                                                 style="cursor: pointer; background-color: #fff;">
                                                 <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg"
-                                                        class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
+                                                        alt="">
                                                 </div>
                                                 <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
                                                     style="top: 10px; left: 10px;">Apple</div>

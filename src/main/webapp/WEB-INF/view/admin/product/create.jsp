@@ -10,7 +10,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="description" content="" />
                 <meta name="author" content="" />
-                <title>Create users - LaptopShop Admin</title>
+                <title>Create products - LaptopShop Admin</title>
                 <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
                 <link href="/css/styles.css" rel="stylesheet" />
                 <link href="/css/core.css" rel="stylesheet" />
@@ -20,12 +20,11 @@
                     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 <script>
                     $(document).ready(() => {
-                        const avatarFile = $("#avatarFile");
-                        avatarFile.change((e) => {
+                        const imgFile = $("#imgFile");
+                        imgFile.change((e) => {
                             const imgUrl = URL.createObjectURL(e.target.files[0]);
-                            console.log("imgUrl", imgUrl);
-                            $("#avatarPreview").attr("src", imgUrl);
-                            $("#avatarPreview").css({ "display": "block" })
+                            $("#imgPreview").attr("src", imgUrl);
+                            $("#imgPreview").css({ "display": "block" })
                         })
                     })
                 </script>
@@ -38,56 +37,66 @@
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4 pb-4">
-                                <h1 class="mt-4">Manage users</h1>
+                                <h1 class="mt-4">Manage products</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item"><a href="/admin/user">Users</a></li>
+                                    <li class="breadcrumb-item"><a href="/admin/product">Products</a></li>
                                     <li class="breadcrumb-item active">Create</li>
                                 </ol>
                                 <div class="container mt-5">
                                     <div class="row">
                                         <div class="col-12 mx-auto">
-                                            <h3>Create user</h3>
+                                            <h3>Create product</h3>
                                             <hr />
-                                            <form:form method="post" action="/admin/user/create" modelAttribute="user"
-                                                class="row" enctype="multipart/form-data">
+                                            <form:form method="post" action="/admin/product/create" class="row"
+                                                enctype="multipart/form-data" modelAttribute="product">
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <form:label path="email">Email: </form:label>
-                                                    <form:input type="email" placeholder="Enter email" path="email" />
+                                                    <form:label path="name">Name product: </form:label>
+                                                    <form:input type="text" placeholder="Enter name" path="name" />
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <form:label path="password">Password: </form:label>
-                                                    <form:input type="password" placeholder="Enter password"
-                                                        path="password" />
-                                                </div>
-                                                <div class="mb-3 col-12 col-md-6">
-                                                    <form:label path="phone">Phone number: </form:label>
-                                                    <form:input type="text" placeholder="Enter phone" path="phone" />
-                                                </div>
-                                                <div class="mb-3 col-12 col-md-6">
-                                                    <form:label path="fullName">Full Name: </form:label>
-                                                    <form:input type="text" placeholder="Enter full name"
-                                                        path="fullName" />
+                                                    <form:label path="price">Price: </form:label>
+                                                    <form:input type="number" placeholder="Enter price" path="price" />
                                                 </div>
                                                 <div class="mb-3 col-12">
-                                                    <form:label path="address">Address: </form:label>
-                                                    <form:input type="text" placeholder="Enter address"
-                                                        path="address" />
+                                                    <form:label path="detailDesc">Detail description: </form:label>
+                                                    <form:textarea rows="4" placeholder="Enter detail description"
+                                                        path="detailDesc" class="textarea-antd" />
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label path="avatarfile">Role: </label>
-                                                    <form:select class="form-select antd-select" path="role.name">
-                                                        <form:option value="USER">USER</form:option>
-                                                        <form:option value="ADMIN">ADMIN</form:option>
+                                                    <form:label path="shortDesc">Short description: </form:label>
+                                                    <form:input type="text" placeholder="Enter short description"
+                                                        path="shortDesc" />
+                                                </div>
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <form:label path="quantity">Quantity: </form:label>
+                                                    <form:input type="number" placeholder="Enter quantity"
+                                                        path="quantity" />
+                                                </div>
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label path="factory">Factory: </label>
+                                                    <form:select class="form-select antd-select" path="factory">
+                                                        <form:option value="APPLE">Apple (Macbook)</form:option>
+                                                        <form:option value="ASUS">Asus</form:option>
+                                                        <form:option value="LENOVO">Lenovo</form:option>
+                                                        <form:option value="DELL">Dell</form:option>
+                                                        <form:option value="LG">LG</form:option>
+                                                        <form:option value="ACER">Acer</form:option>
                                                     </form:select>
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label path="avatarfile">Avatar: </label>
-                                                    <input type="file" placeholder="Select file" id="avatarFile"
-                                                        accept=".png, .jpg, .jpeg" name="avatarFile" />
+                                                    <label path="target">Target: </label>
+                                                    <form:select class="form-select antd-select" path="target">
+                                                        <form:option value="Gaming">Gaming</form:option>
+                                                    </form:select>
+                                                </div>
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label path="image">Image: </label>
+                                                    <input type="file" placeholder="Select file" id="imgFile"
+                                                        accept=".png, .jpg, .jpeg" name="image" />
                                                 </div>
                                                 <div class="mb-3 col-12">
-                                                    <img src="" id="avatarPreview" alt=""
+                                                    <img src="" id="imgPreview" alt=""
                                                         style="display: none; width: 100px;">
                                                 </div>
                                                 <div class="col-12">

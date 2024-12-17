@@ -10,6 +10,7 @@
             <meta name="description" content="" />
             <meta name="author" content="" />
             <title>Product - LaptopShop Admin</title>
+            <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
             <link href="/css/styles.css" rel="stylesheet" />
             <link href="/css/core.css" rel="stylesheet" />
             <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -27,7 +28,51 @@
                                 <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Products</li>
                             </ol>
-                            <div>Product</div>
+                            <div class="container mt-5" style="padding: 0;">
+                                <div class="row">
+                                    <div class="col-12 mx-auto">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Table products</h3>
+                                            <button class="btn--main"
+                                                onclick="window.location.href='/admin/product/create'">
+                                                Create
+                                            </button>
+                                        </div>
+                                        <hr />
+                                        <table class="antd-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Product Name</th>
+                                                    <th>Price</th>
+                                                    <th>Factory</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <c:forEach var="product" items="${productsList}">
+                                                    <tr>
+                                                        <td>${product.id}</td>
+                                                        <td>
+                                                            <a href="/admin/product/${product.id}" class="link">
+                                                                ${product.name}
+                                                            </a>
+                                                        </td>
+                                                        <td>${product.price}</td>
+                                                        <td>${product.factory}</td>
+                                                        <td>
+                                                            <button class="btn--warning"
+                                                                onclick="window.location.href='/admin/product/update/${product.id}'">Update</button>
+                                                            <button class="btn--danger"
+                                                                onclick="window.location.href='/admin/product/delete/${product.id}'">Delete</button>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </main>
                 </div>

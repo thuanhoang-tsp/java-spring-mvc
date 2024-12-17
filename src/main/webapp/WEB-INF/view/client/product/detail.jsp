@@ -9,6 +9,7 @@
             <meta content="width=device-width, initial-scale=1.0" name="viewport">
             <meta content="" name="keywords">
             <meta content="" name="description">
+            <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link
@@ -31,21 +32,18 @@
             <jsp:include page="../layout/header.jsp" />
             <div class="container-fluid py-5 mt-5">
                 <div class="container pt-5">
-                    <div class="row g-4 mb-5">
+                    <div class="row g-5 mb-5">
                         <div class="col-lg-8 col-xl-9">
                             <div class="row g-4">
                                 <div class="col-lg-6">
-                                    <div class="border rounded">
-                                        <a href="#">
-                                            <img src="/client/img/single-item.jpg" class="img-fluid rounded"
-                                                alt="Image">
-                                        </a>
+                                    <div class="rounded">
+                                        <img src="/client/img/fruite-item-5.jpg" class="img-fluid rounded" alt="Image">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <h4 class="fw-bold mb-3">Brocoli</h4>
-                                    <p class="mb-3">Category: Vegetables</p>
-                                    <h5 class="fw-bold mb-3">3,35 $</h5>
+                                <div class="col-lg-6" style="border-radius: 8px; background-color: #fff; padding: 12px">
+                                    <h4 class="fw-bold mb-3">MacBook Air 2022 (Apple M2)</h4>
+                                    <p class="mb-3">Category: Apple</p>
+                                    <h5 class="fw-bold mb-3">499 $</h5>
                                     <div class="d-flex mb-4">
                                         <i class="fa fa-star text-secondary"></i>
                                         <i class="fa fa-star text-secondary"></i>
@@ -53,27 +51,29 @@
                                         <i class="fa fa-star text-secondary"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <p class="mb-4">The generated Lorem Ipsum is therefore always free from repetition
-                                        injected humour, or non-characteristic words etc.</p>
-                                    <p class="mb-4">Susp endisse ultricies nisi vel quam suscipit. Sabertooth peacock
-                                        flounder; chain pickerel hatchetfish, pencilfish snailfish</p>
-                                    <div class="input-group quantity mb-5" style="width: 200px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn--main btn-minus border"
-                                                style="min-width: 0; height: 40px;">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
+                                    <p class="mb-4">So với MacBook Air M2, thiết kế của MacBook Air M2 nay đã được tinh
+                                        chỉnh và “đại tu” lại một cách hoành tráng. Mặc dù MacBook Air M2 không phải là
+                                        một chiếc laptop siêu mỏng nhưng kích thước tổng thể của máy vẫn ổn và đủ để đảm
+                                        bảo tính cơ động, bao gồm 304.1mm x 215mm x 11.3mm cùng trọng lượng 1.24kg. </p>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div class="input-group quantity" style="width: 200px;">
+                                            <div class="input-group-btn">
+                                                <button class="btn--main btn-minus border"
+                                                    style="min-width: 0; height: 40px;">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" class="text-center" value="1">
+                                            <div class="input-group-btn">
+                                                <button class="btn--main btn-plus border"
+                                                    style="min-width: 0; height: 40px;">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <input type="text" class="text-center" value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn--main btn-plus border"
-                                                style="min-width: 0; height: 40px;">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
+                                        <button class="btn--main rounded-pill px-4 py-2"><i
+                                                class="fa fa-shopping-bag me-2"></i> Add to cart</button>
                                     </div>
-                                    <button class="btn--main rounded-pill px-4 py-2 mb-4"><i
-                                            class="fa fa-shopping-bag me-2"></i> Add to cart</button>
                                 </div>
                                 <div class="col-lg-12">
                                     <nav>
@@ -84,7 +84,7 @@
                                                 Description</div>
                                         </div>
                                     </nav>
-                                    <div class="tab-content mb-5">
+                                    <div class="tab-content">
                                         <div class="tab-pane active" id="nav-about" role="tabpanel"
                                             aria-labelledby="nav-about-tab">
                                             <p>The generated Lorem Ipsum is therefore always free from repetition
@@ -95,12 +95,6 @@
                                                 icefish goldeye aholehole trumpetfish pilot fish airbreathing catfish,
                                                 electric ray sweeper.</p>
                                             <table class="antd-table" style="width: 50%;">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Attribute</th>
-                                                        <th>Value</th>
-                                                    </tr>
-                                                </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>Weight</td>
@@ -183,43 +177,41 @@
                         </div>
                         <div class="col-lg-4 col-xl-3">
                             <div class="row g-4 fruite">
-                                <div class="col-lg-12">
-
-                                    <div class="mb-4">
-                                        <h4>Categories</h4>
-                                        <ul class="list-unstyled fruite-categorie">
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Apples</a>
-                                                    <span>(3)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
-                                                    <span>(2)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
-                                                    <span>(8)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="col-lg-12"
+                                    style="background-color: #fff; border-radius: 8px; padding: 12px;">
+                                    <h4>Categories</h4>
+                                    <ul class="list-unstyled fruite-categorie">
+                                        <li>
+                                            <div class="d-flex justify-content-between fruite-name">
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Apples</a>
+                                                <span>(3)</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex justify-content-between fruite-name">
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
+                                                <span>(5)</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex justify-content-between fruite-name">
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
+                                                <span>(2)</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex justify-content-between fruite-name">
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
+                                                <span>(8)</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex justify-content-between fruite-name">
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
+                                                <span>(5)</span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
