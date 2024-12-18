@@ -48,12 +48,18 @@ public class UserController {
     }
 
     @PostMapping("/admin/user/create")
-    public String createUserPage(Model model, @ModelAttribute("user") @Valid User user, BindingResult bindingResult,
+    public String createUserPage(Model model, @ModelAttribute("user") @Valid User user, BindingResult userBindingResult,
             @RequestParam("avatarFile") MultipartFile file) {
-        List<FieldError> errors = bindingResult.getFieldErrors();
+        List<FieldError> errors = userBindingResult.getFieldErrors();
+
         for (FieldError error : errors) {
-            System.out.println(">>>>>>>>>>>>" + error.getObjectName() + " - " + error.getDefaultMessage());
+            System.out.println(">>>>>>>>>>>>" + error.getField() + " - " + error.getDefaultMessage());
         }
+
+        if (userBindingResult.hasErrors()) {
+            return "/admin/user/create";
+        }
+
         String avatar = uploadService.handleSaveUploadFile(file, "avatar");
         String hashPassword = passwordEncoder.encode(user.getPassword());
         user.setAvatar(avatar);
@@ -102,7 +108,7 @@ public class UserController {
     }
 
     @GetMapping("/admin/user/delete/{id}")
-    public String createUserPage(Model model, @PathVariable long id) {
+    public String deleteUserPage(Model model, @PathVariable long id) {
         model.addAttribute("id", id);
         model.addAttribute("user", new User());
         return "admin/user/delete";

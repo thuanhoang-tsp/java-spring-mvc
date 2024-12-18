@@ -22,7 +22,7 @@
                 <jsp:include page="../layout/sidebar.jsp" />
                 <div id="layoutSidenav_content">
                     <main>
-                        <div class="container-fluid px-4">
+                        <div class="container-fluid px-4 pb-4">
                             <h1 class="mt-4">Manage products</h1>
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
@@ -44,6 +44,7 @@
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Product Name</th>
+                                                    <th style="width: 100px;">Image</th>
                                                     <th>Price</th>
                                                     <th>Factory</th>
                                                     <th>Action</th>
@@ -58,7 +59,10 @@
                                                                 ${product.name}
                                                             </a>
                                                         </td>
-                                                        <td>${product.price}</td>
+                                                        <td><img src="/images/product/${product.imageProduct}"
+                                                                alt="Image ${product.name}" style="width: 100%;">
+                                                        </td>
+                                                        <td>${product.price}$</td>
                                                         <td>${product.factory}</td>
                                                         <td>
                                                             <button class="btn--warning"

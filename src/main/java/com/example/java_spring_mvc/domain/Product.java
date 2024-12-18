@@ -5,6 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "products")
@@ -13,12 +17,28 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull(message = "Product name don't empty")
+    @Size(min = 5, message = "Product name must have a least 5 characters")
     private String name;
+
+    @NotNull
+    @DecimalMin(value = "99", inclusive = false, message = "Price must be greater than or equal to 100")
     private double price;
-    private String image;
+
+    private String imageProduct;
+
+    @NotNull
+    @NotEmpty(message = "Detail description is required")
     private String detailDesc;
+
+    @NotNull
+    @NotEmpty(message = "Short detail is required")
     private String shortDesc;
+
+    @NotNull
+    @DecimalMin(value = "0", inclusive = false, message = "Price must be greater than or equal to 1")
     private long quantity;
+
     private long sold;
     private String factory;
     private String target;
@@ -47,12 +67,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageProduct() {
+        return imageProduct;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImageProduct(String imageProduct) {
+        this.imageProduct = imageProduct;
     }
 
     public String getDetailDesc() {
@@ -105,7 +125,8 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product [id=" + id + ", name=" + name + ", price=" + price + ", image=" + image + ", detailDesc="
+        return "Product [id=" + id + ", name=" + name + ", price=" + price + ", imageProduct=" + imageProduct
+                + ", detailDesc="
                 + detailDesc + ", shortDesc=" + shortDesc + ", quantity=" + quantity + ", sold=" + sold + ", factory="
                 + factory + ", target=" + target + "]";
     }

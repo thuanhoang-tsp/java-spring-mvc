@@ -9,6 +9,7 @@
 
     --primary-color: #4072d0;
     --text-color: #344054;
+    --error-color: #ff4d4f;
 
     --fw-400: 400;
     --fw-500: 500;
@@ -241,4 +242,28 @@ a.link {
     cursor: not-allowed;
     pointer-events: none;
     background-color: #d4d4d4;
+}
+
+.input-error-message {
+    display: block;
+    margin-top: var(--space-6);
+    color: var(--error-color);
+}
+
+.input-error {
+    border: 1px solid var(--error-color);
+    border-radius: var(--rounded-6);
+    box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-error:focus {
+    border-color: var(--error-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.3);
+}
+
+.input-required {
+    color: var(--error-color);
+    margin-inline-end: 4px;
 }

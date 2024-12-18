@@ -52,22 +52,40 @@
                                             <form:form method="post" action="/admin/user/create" modelAttribute="user"
                                                 class="row" enctype="multipart/form-data">
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <form:label path="email">Email: </form:label>
-                                                    <form:input type="email" placeholder="Enter email" path="email" />
+                                                    <c:set var="errorEmail">
+                                                        <form:errors path="email" class="input-error-message" />
+                                                    </c:set>
+                                                    <form:label path="email"><span class="input-required">*</span>Email:
+                                                    </form:label>
+                                                    <form:input type="email" placeholder="Enter email" path="email"
+                                                        class="${not empty errorEmail ? 'input-error' : ''}" />
+                                                    ${errorEmail}
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <form:label path="password">Password: </form:label>
+                                                    <c:set var="errorPassword">
+                                                        <form:errors path="password" class="input-error-message" />
+                                                    </c:set>
+                                                    <form:label path="password"><span
+                                                            class="input-required">*</span>Password: </form:label>
                                                     <form:input type="password" placeholder="Enter password"
-                                                        path="password" />
+                                                        path="password"
+                                                        class="${not empty errorPassword ? 'input-error' : ''}" />
+                                                    ${errorPassword}
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <form:label path="phone">Phone number: </form:label>
                                                     <form:input type="text" placeholder="Enter phone" path="phone" />
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <form:label path="fullName">Full Name: </form:label>
+                                                    <c:set var="fullNamePassword">
+                                                        <form:errors path="fullName" class="input-error-message" />
+                                                    </c:set>
+                                                    <form:label path="fullName"><span
+                                                            class="input-required">*</span>Full Name: </form:label>
                                                     <form:input type="text" placeholder="Enter full name"
-                                                        path="fullName" />
+                                                        path="fullName"
+                                                        class="${not empty fullNamePassword ? 'input-error' : ''}" />
+                                                    ${fullNamePassword}
                                                 </div>
                                                 <div class="mb-3 col-12">
                                                     <form:label path="address">Address: </form:label>
@@ -82,7 +100,7 @@
                                                     </form:select>
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label path="avatarfile">Avatar: </label>
+                                                    <label>Avatar: </label>
                                                     <input type="file" placeholder="Select file" id="avatarFile"
                                                         accept=".png, .jpg, .jpeg" name="avatarFile" />
                                                 </div>

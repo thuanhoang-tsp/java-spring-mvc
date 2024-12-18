@@ -50,7 +50,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-
                                                 <c:forEach var="user" items="${usersList}">
                                                     <tr>
                                                         <td>${user.id}</td>

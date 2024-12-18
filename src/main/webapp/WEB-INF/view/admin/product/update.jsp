@@ -10,7 +10,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="description" content="" />
                 <meta name="author" content="" />
-                <title>Create product - LaptopShop Admin</title>
+                <title>Update product - LaptopShop Admin</title>
                 <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
                 <link href="/css/styles.css" rel="stylesheet" />
                 <link href="/css/core.css" rel="stylesheet" />
@@ -20,11 +20,11 @@
                     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 <script>
                     $(document).ready(() => {
-                        const imgFile = $("#imgFile");
-                        imgFile.change((e) => {
+                        const avatarFile = $("#avatarFile");
+                        avatarFile.change((e) => {
                             const imgUrl = URL.createObjectURL(e.target.files[0]);
-                            $("#imgPreview").attr("src", imgUrl);
-                            $("#imgPreview").css({ "display": "block" })
+                            console.log("imgUrl", imgUrl);
+                            $("#avatarPreview").attr("src", imgUrl);
                         })
                     })
                 </script>
@@ -41,15 +41,19 @@
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="/admin/product">Products</a></li>
-                                    <li class="breadcrumb-item active">Create</li>
+                                    <li class="breadcrumb-item active">Update</li>
                                 </ol>
                                 <div class="container mt-5">
                                     <div class="row">
                                         <div class="col-12 mx-auto">
-                                            <h3>Create product</h3>
+                                            <h3>Update product</h3>
                                             <hr />
-                                            <form:form method="post" action="/admin/product/create" class="row"
-                                                enctype="multipart/form-data" modelAttribute="product">
+                                            <form:form method="post" action="/admin/product/update"
+                                                modelAttribute="product" class="row" enctype="multipart/form-data">
+                                                <div class="mb-3 col-12 col-md-6" style="display: none;">
+                                                    <form:label path="id">Product ID: </form:label>
+                                                    <form:input path="id" class="disabled" readonly="true" />
+                                                </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <c:set var="errorName">
                                                         <form:errors path="name" class="input-error-message" />
@@ -137,12 +141,12 @@
                                                         accept=".png, .jpg, .jpeg" name="imageProduct" />
                                                 </div>
                                                 <div class="mb-3 col-12">
-                                                    <img src="" id="imgPreview" alt=""
-                                                        style="display: none; width: 100px;">
+                                                    <img src="/images/product/${product.imageProduct}"
+                                                        id="avatarPreview" alt="{product.name}" style="width: 100px;">
                                                 </div>
                                                 <div class="col-12">
-                                                    <button type="submit" class="btn--main"
-                                                        style="width: 100%;">Create</button>
+                                                    <button type="submit" class="btn btn--warning"
+                                                        style="width: 100%;">Update</button>
                                                 </div>
                                             </form:form>
                                         </div>

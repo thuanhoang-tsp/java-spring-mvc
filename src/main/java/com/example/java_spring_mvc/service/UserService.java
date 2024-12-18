@@ -19,10 +19,6 @@ public class UserService {
         this.roleRepository = roleRepository;
     }
 
-    public String handleHello() {
-        return "Hello from Service";
-    }
-
     public List<User> getallUsers() {
         return userRepository.findAll();
     }
