@@ -65,198 +65,44 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="row g-4">
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item"
-                                                style="cursor: pointer; background-color: #fff;">
-                                                <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
-                                                        alt="">
-                                                </div>
-                                                <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
-                                                    style="top: 10px; left: 10px;">Apple</div>
-                                                <div class="p-4 rounded-bottom">
-                                                    <h4 style="color: #363636">Apple</h4>
-                                                    <p
-                                                        style="color: #828282; width: 200px; overflow: hidden; display: inline-block; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; margin-bottom: 12px;">
-                                                        2020 Apple MacBook Air Laptop: Apple M1
-                                                        Chip, 13” Retina Display,
-                                                        8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD
-                                                        Camera, Touch ID. Works with iPhone/iPad; Silver</p>
-                                                    <p style="font-size: 16px">$499</p>
-                                                    <hr style="margin: 12px 0" />
-                                                    <button class="btn--main" style="width: 100%;">
-                                                        Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item"
-                                                style="cursor: pointer; background-color: #fff;">
-                                                <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
-                                                        alt="">
-                                                </div>
-                                                <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
-                                                    style="top: 10px; left: 10px;">Apple</div>
-                                                <div class="p-4 rounded-bottom">
-                                                    <h4 style="color: #363636">Apple</h4>
-                                                    <p
-                                                        style="color: #828282; width: 200px; overflow: hidden; display: inline-block; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; margin-bottom: 12px;">
-                                                        2020 Apple MacBook Air Laptop: Apple M1
-                                                        Chip, 13” Retina Display,
-                                                        8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD
-                                                        Camera, Touch ID. Works with iPhone/iPad; Silver</p>
-                                                    <p style="font-size: 16px">$499</p>
-                                                    <hr style="margin: 12px 0" />
-                                                    <button class="btn--main" style="width: 100%;">
-                                                        Add to cart</button>
+                                        <c:forEach var="product" items="${productsList}">
+                                            <div class="col-md-6 col-lg-4 col-xl-3"
+                                                onclick="window.location.href='/product/${product.id}'">
+                                                <div class="rounded position-relative fruite-item rounded"
+                                                    style="height: 100%; display: flex; flex-direction: column; cursor: pointer; background-color: #fff">
+                                                    <div class="fruite-img">
+                                                        <img src="/images/product/${product.imageProduct}"
+                                                            class="img-fluid w-100" alt="${product.name}">
+                                                    </div>
+                                                    <div class="text-white px-3 py-1 rounded position-absolute"
+                                                        style="top: 10px; left: 10px; background-color: #FE3464; font-size: 12px; font-weight: 500;">
+                                                        ${product.factory}</div>
+
+                                                    <div class="p-4 rounded-bottom d-flex flex-column flex-grow-1">
+                                                        <h5 class="product-name mb-2"
+                                                            style="color: #363636; font-size: 14px; font-weight: 500;">
+                                                            ${product.name}
+                                                        </h5>
+                                                        <div class="product-price mb-2"
+                                                            style="font-size: 12px; color: rgb(107, 112, 117);">
+                                                            From:
+                                                            <b style="color: rgba(254, 52, 100); font-size: 16px;">
+                                                                $${product.price}
+                                                            </b>
+                                                        </div>
+                                                        <hr style="margin: 12px 0" />
+                                                        <div class="product-description flex-grow-1 mb-2"
+                                                            style="color: #828282; font-size: 12px; overflow: hidden;">
+                                                            ${product.shortDesc}
+                                                        </div>
+                                                        <hr style="margin: 12px 0" />
+                                                        <button class="btn--main mt-auto" style="width: 100%;">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item"
-                                                style="cursor: pointer; background-color: #fff;">
-                                                <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
-                                                        alt="">
-                                                </div>
-                                                <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
-                                                    style="top: 10px; left: 10px;">Apple</div>
-                                                <div class="p-4 rounded-bottom">
-                                                    <h4 style="color: #363636">Apple</h4>
-                                                    <p
-                                                        style="color: #828282; width: 200px; overflow: hidden; display: inline-block; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; margin-bottom: 12px;">
-                                                        2020 Apple MacBook Air Laptop: Apple M1
-                                                        Chip, 13” Retina Display,
-                                                        8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD
-                                                        Camera, Touch ID. Works with iPhone/iPad; Silver</p>
-                                                    <p style="font-size: 16px">$499</p>
-                                                    <hr style="margin: 12px 0" />
-                                                    <button class="btn--main" style="width: 100%;">
-                                                        Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item"
-                                                style="cursor: pointer; background-color: #fff;">
-                                                <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
-                                                        alt="">
-                                                </div>
-                                                <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
-                                                    style="top: 10px; left: 10px;">Apple</div>
-                                                <div class="p-4 rounded-bottom">
-                                                    <h4 style="color: #363636">Apple</h4>
-                                                    <p
-                                                        style="color: #828282; width: 200px; overflow: hidden; display: inline-block; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; margin-bottom: 12px;">
-                                                        2020 Apple MacBook Air Laptop: Apple M1
-                                                        Chip, 13” Retina Display,
-                                                        8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD
-                                                        Camera, Touch ID. Works with iPhone/iPad; Silver</p>
-                                                    <p style="font-size: 16px">$499</p>
-                                                    <hr style="margin: 12px 0" />
-                                                    <button class="btn--main" style="width: 100%;">
-                                                        Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item"
-                                                style="cursor: pointer; background-color: #fff;">
-                                                <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
-                                                        alt="">
-                                                </div>
-                                                <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
-                                                    style="top: 10px; left: 10px;">Apple</div>
-                                                <div class="p-4 rounded-bottom">
-                                                    <h4 style="color: #363636">Apple</h4>
-                                                    <p
-                                                        style="color: #828282; width: 200px; overflow: hidden; display: inline-block; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; margin-bottom: 12px;">
-                                                        2020 Apple MacBook Air Laptop: Apple M1
-                                                        Chip, 13” Retina Display,
-                                                        8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD
-                                                        Camera, Touch ID. Works with iPhone/iPad; Silver</p>
-                                                    <p style="font-size: 16px">$499</p>
-                                                    <hr style="margin: 12px 0" />
-                                                    <button class="btn--main" style="width: 100%;">
-                                                        Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item"
-                                                style="cursor: pointer; background-color: #fff;">
-                                                <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
-                                                        alt="">
-                                                </div>
-                                                <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
-                                                    style="top: 10px; left: 10px;">Apple</div>
-                                                <div class="p-4 rounded-bottom">
-                                                    <h4 style="color: #363636">Apple</h4>
-                                                    <p
-                                                        style="color: #828282; width: 200px; overflow: hidden; display: inline-block; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; margin-bottom: 12px;">
-                                                        2020 Apple MacBook Air Laptop: Apple M1
-                                                        Chip, 13” Retina Display,
-                                                        8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD
-                                                        Camera, Touch ID. Works with iPhone/iPad; Silver</p>
-                                                    <p style="font-size: 16px">$499</p>
-                                                    <hr style="margin: 12px 0" />
-                                                    <button class="btn--main" style="width: 100%;">
-                                                        Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item"
-                                                style="cursor: pointer; background-color: #fff;">
-                                                <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
-                                                        alt="">
-                                                </div>
-                                                <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
-                                                    style="top: 10px; left: 10px;">Apple</div>
-                                                <div class="p-4 rounded-bottom">
-                                                    <h4 style="color: #363636">Apple</h4>
-                                                    <p
-                                                        style="color: #828282; width: 200px; overflow: hidden; display: inline-block; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; margin-bottom: 12px;">
-                                                        2020 Apple MacBook Air Laptop: Apple M1
-                                                        Chip, 13” Retina Display,
-                                                        8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD
-                                                        Camera, Touch ID. Works with iPhone/iPad; Silver</p>
-                                                    <p style="font-size: 16px">$499</p>
-                                                    <hr style="margin: 12px 0" />
-                                                    <button class="btn--main" style="width: 100%;">
-                                                        Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item"
-                                                style="cursor: pointer; background-color: #fff;">
-                                                <div class="fruite-img">
-                                                    <img src="/client/img/fruite-item-5.jpg" class="img-fluid w-100"
-                                                        alt="">
-                                                </div>
-                                                <div class="text-white px-3 py-1 rounded position-absolute bg-secondary"
-                                                    style="top: 10px; left: 10px;">Apple</div>
-                                                <div class="p-4 rounded-bottom">
-                                                    <h4 style="color: #363636">Apple</h4>
-                                                    <p
-                                                        style="color: #828282; width: 200px; overflow: hidden; display: inline-block; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; margin-bottom: 12px;">
-                                                        2020 Apple MacBook Air Laptop: Apple M1
-                                                        Chip, 13” Retina Display,
-                                                        8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD
-                                                        Camera, Touch ID. Works with iPhone/iPad; Silver</p>
-                                                    <p style="font-size: 16px">$499</p>
-                                                    <hr style="margin: 12px 0" />
-                                                    <button class="btn--main" style="width: 100%;">
-                                                        Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </c:forEach>
                                     </div>
                                 </div>
                             </div>

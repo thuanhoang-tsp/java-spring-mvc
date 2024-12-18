@@ -1,5 +1,6 @@
 package com.example.java_spring_mvc.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,10 +30,12 @@ public class Product {
 
     @NotNull
     @NotEmpty(message = "Detail description is required")
+    @Column(columnDefinition = "MEDIUMTEXT")
     private String detailDesc;
 
     @NotNull
     @NotEmpty(message = "Short detail is required")
+    @Column(columnDefinition = "MEDIUMTEXT")
     private String shortDesc;
 
     @NotNull

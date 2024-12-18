@@ -5,7 +5,7 @@
 
         <head>
             <meta charset="utf-8">
-            <title>LaptopShop</title>
+            <title>${product.name} - LaptopShop</title>
             <meta content="width=device-width, initial-scale=1.0" name="viewport">
             <meta content="" name="keywords">
             <meta content="" name="description">
@@ -30,20 +30,22 @@
                 <div class="spinner-grow text-primary" role="status"></div>
             </div>
             <jsp:include page="../layout/header.jsp" />
-            <div class="container-fluid py-5 mt-5">
+            <div class="container-fluid pt-5 mt-5">
                 <div class="container pt-5">
                     <div class="row g-5 mb-5">
                         <div class="col-lg-8 col-xl-9">
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="rounded">
-                                        <img src="/client/img/fruite-item-5.jpg" class="img-fluid rounded" alt="Image">
+                                        <img src="/images/product/${product.imageProduct}" class="img-fluid rounded"
+                                            alt="Image">
                                     </div>
                                 </div>
                                 <div class="col-lg-6" style="border-radius: 8px; background-color: #fff; padding: 12px">
-                                    <h4 class="fw-bold mb-3">MacBook Air 2022 (Apple M2)</h4>
-                                    <p class="mb-3">Category: Apple</p>
-                                    <h5 class="fw-bold mb-3">499 $</h5>
+                                    <h4 class="fw-bold mb-3">${product.name}</h4>
+                                    <div class="mb-3">Category: <b>${product.factory}</b>
+                                    </div>
+                                    <h5 class="fw-bold mb-3" style="color: rgba(254, 52, 100)">$${product.price}</h5>
                                     <div class="d-flex mb-4">
                                         <i class="fa fa-star text-secondary"></i>
                                         <i class="fa fa-star text-secondary"></i>
@@ -51,10 +53,7 @@
                                         <i class="fa fa-star text-secondary"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <p class="mb-4">So với MacBook Air M2, thiết kế của MacBook Air M2 nay đã được tinh
-                                        chỉnh và “đại tu” lại một cách hoành tráng. Mặc dù MacBook Air M2 không phải là
-                                        một chiếc laptop siêu mỏng nhưng kích thước tổng thể của máy vẫn ổn và đủ để đảm
-                                        bảo tính cơ động, bao gồm 304.1mm x 215mm x 11.3mm cùng trọng lượng 1.24kg. </p>
+                                    <p class="mb-4">${product.detailDesc}</p>
                                     <div style="display: flex; justify-content: space-between; align-items: center;">
                                         <div class="input-group quantity" style="width: 200px;">
                                             <div class="input-group-btn">
@@ -63,7 +62,7 @@
                                                     <i class="fa fa-minus"></i>
                                                 </button>
                                             </div>
-                                            <input type="text" class="text-center" value="1">
+                                            <input type="text" class="text-center" value="1" max="${product.quantity}">
                                             <div class="input-group-btn">
                                                 <button class="btn--main btn-plus border"
                                                     style="min-width: 0; height: 40px;">
@@ -87,89 +86,8 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="nav-about" role="tabpanel"
                                             aria-labelledby="nav-about-tab">
-                                            <p>The generated Lorem Ipsum is therefore always free from repetition
-                                                injected humour, or non-characteristic words etc.
-                                                Susp endisse ultricies nisi vel quam suscipit </p>
-                                            <p>Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish
-                                                snailfish filefish Antarctic
-                                                icefish goldeye aholehole trumpetfish pilot fish airbreathing catfish,
-                                                electric ray sweeper.</p>
-                                            <table class="antd-table" style="width: 50%;">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Weight</td>
-                                                        <td>1 kg</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Country of Origin</td>
-                                                        <td>Agro Farm</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Quality</td>
-                                                        <td>Organic</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Check</td>
-                                                        <td>Healthy</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Min Weight</td>
-                                                        <td>250 Kg</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                        <div class="tab-pane" id="nav-mission" role="tabpanel"
-                                            aria-labelledby="nav-mission-tab">
-                                            <div class="d-flex">
-                                                <img src="/client/img/avatar.jpg" class="img-fluid rounded-circle p-3"
-                                                    style="width: 100px; height: 100px;" alt="">
-                                                <div class="">
-                                                    <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
-                                                    <div class="d-flex justify-content-between">
-                                                        <h5>Jason Smith</h5>
-                                                        <div class="d-flex mb-3">
-                                                            <i class="fa fa-star text-secondary"></i>
-                                                            <i class="fa fa-star text-secondary"></i>
-                                                            <i class="fa fa-star text-secondary"></i>
-                                                            <i class="fa fa-star text-secondary"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                    <p>The generated Lorem Ipsum is therefore always free from
-                                                        repetition injected humour, or non-characteristic
-                                                        words etc. Susp endisse ultricies nisi vel quam suscipit </p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex">
-                                                <img src="/client/img/avatar.jpg" class="img-fluid rounded-circle p-3"
-                                                    style="width: 100px; height: 100px;" alt="">
-                                                <div class="">
-                                                    <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
-                                                    <div class="d-flex justify-content-between">
-                                                        <h5>Sam Peters</h5>
-                                                        <div class="d-flex mb-3">
-                                                            <i class="fa fa-star text-secondary"></i>
-                                                            <i class="fa fa-star text-secondary"></i>
-                                                            <i class="fa fa-star text-secondary"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                    <p class="text-dark">The generated Lorem Ipsum is therefore always
-                                                        free from repetition injected humour, or non-characteristic
-                                                        words etc. Susp endisse ultricies nisi vel quam suscipit </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane" id="nav-vision" role="tabpanel">
-                                            <p class="text-dark">Tempor erat elitr rebum at clita. Diam dolor diam ipsum
-                                                et tempor sit. Aliqu diam
-                                                amet diam et eos labore. 3</p>
-                                            <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et
-                                                eos labore.
-                                                Clita erat ipsum et lorem et sit</p>
+                                            <p>${product.shortDesc}</p>
+                                            <p>${product.detailDesc}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -183,31 +101,31 @@
                                     <ul class="list-unstyled fruite-categorie">
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Apples</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Apple</a>
                                                 <span>(3)</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Dell</a>
                                                 <span>(5)</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Asus</a>
                                                 <span>(2)</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Lenovo</a>
                                                 <span>(8)</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Acer</a>
                                                 <span>(5)</span>
                                             </div>
                                         </li>

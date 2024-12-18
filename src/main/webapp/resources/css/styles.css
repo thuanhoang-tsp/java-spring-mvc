@@ -6265,7 +6265,7 @@ textarea.is-invalid.datatable-input {
   --bs-spinner-vertical-align: -0.125em;
   --bs-spinner-animation-speed: 0.75s;
   --bs-spinner-animation-name: spinner-grow;
-  background-color: currentcolor;
+  background-color: var(--primary-color);
   opacity: 0;
 }
 
