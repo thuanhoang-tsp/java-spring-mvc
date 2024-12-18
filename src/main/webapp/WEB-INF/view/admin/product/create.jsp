@@ -20,11 +20,12 @@
                     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 <script>
                     $(document).ready(() => {
-                        const imgFile = $("#imgFile");
-                        imgFile.change((e) => {
+                        const avatarFile = $("#avatarFile");
+                        avatarFile.change((e) => {
                             const imgUrl = URL.createObjectURL(e.target.files[0]);
-                            $("#imgPreview").attr("src", imgUrl);
-                            $("#imgPreview").css({ "display": "block" })
+                            console.log("imgUrl", imgUrl);
+                            $("#avatarPreview").attr("src", imgUrl);
+                            $("#avatarPreview").css({ "display": "block" })
                         })
                     })
                 </script>
@@ -48,8 +49,8 @@
                                         <div class="col-12 mx-auto">
                                             <h3>Create product</h3>
                                             <hr />
-                                            <form:form method="post" action="/admin/product/create" class="row"
-                                                enctype="multipart/form-data" modelAttribute="product">
+                                            <form:form method="post" action="/admin/product/create"
+                                                modelAttribute="product" class="row" enctype="multipart/form-data">
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <c:set var="errorName">
                                                         <form:errors path="name" class="input-error-message" />
@@ -133,11 +134,11 @@
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label>Image: </label>
-                                                    <input type="file" placeholder="Select file" id="imgFile"
-                                                        accept=".png, .jpg, .jpeg" name="imageProduct" />
+                                                    <input type="file" placeholder="Select file" id="avatarFile"
+                                                        accept=".png, .jpg, .jpeg" name="avatarFile" />
                                                 </div>
                                                 <div class="mb-3 col-12">
-                                                    <img src="" id="imgPreview" alt=""
+                                                    <img src="" id="avatarPreview" alt=""
                                                         style="display: none; width: 100px;">
                                                 </div>
                                                 <div class="col-12">

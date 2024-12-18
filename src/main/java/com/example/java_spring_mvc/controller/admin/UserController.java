@@ -50,11 +50,6 @@ public class UserController {
     @PostMapping("/admin/user/create")
     public String createUserPage(Model model, @ModelAttribute("user") @Valid User user, BindingResult userBindingResult,
             @RequestParam("avatarFile") MultipartFile file) {
-        List<FieldError> errors = userBindingResult.getFieldErrors();
-
-        for (FieldError error : errors) {
-            System.out.println(">>>>>>>>>>>>" + error.getField() + " - " + error.getDefaultMessage());
-        }
 
         if (userBindingResult.hasErrors()) {
             return "/admin/user/create";
@@ -89,7 +84,11 @@ public class UserController {
 
     @PostMapping("/admin/user/update")
     public String updateUserPage(Model model, @RequestParam("avatarFile") MultipartFile file,
-            @ModelAttribute("user") User user) {
+            @ModelAttribute("user") @Valid User user, BindingResult userBindingResult) {
+        if (userBindingResult.hasErrors()) {
+            return "/admin/user/create";
+        }
+
         User userById = userService.getUserById(user.getId());
         if (userById != null) {
             userById.setAddress(user.getAddress());

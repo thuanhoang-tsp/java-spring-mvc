@@ -25,6 +25,7 @@
                             const imgUrl = URL.createObjectURL(e.target.files[0]);
                             console.log("imgUrl", imgUrl);
                             $("#avatarPreview").attr("src", imgUrl);
+                            $("#avatarPreview").css({ "display": "block" })
                         })
                     })
                 </script>
@@ -137,12 +138,12 @@
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label>Image: </label>
-                                                    <input type="file" placeholder="Select file" id="imgFile"
-                                                        accept=".png, .jpg, .jpeg" name="imageProduct" />
+                                                    <input type="file" placeholder="Select file" id="avatarFile"
+                                                        accept=".png, .jpg, .jpeg" name="avatarFile" />
                                                 </div>
                                                 <div class="mb-3 col-12">
                                                     <img src="/images/product/${product.imageProduct}"
-                                                        id="avatarPreview" alt="{product.name}" style="width: 100px;">
+                                                        id="avatarPreview" alt="${product.name}" style="width: 100px;">
                                                 </div>
                                                 <div class="col-12">
                                                     <button type="submit" class="btn btn--warning"
