@@ -2,6 +2,8 @@ package com.example.java_spring_mvc.domain;
 
 import java.util.List;
 
+import com.example.java_spring_mvc.service.validator.StrongPassword;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

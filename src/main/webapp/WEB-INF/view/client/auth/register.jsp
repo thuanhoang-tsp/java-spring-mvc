@@ -7,7 +7,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>LaptopShop</title>
+                <title>Register - LaptopShop</title>
                 <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,12 +73,42 @@
                                 Create an account to enjoy all the services without any ads for free!
                             </p>
                         </div>
-                        <form method="post" action="/" class="row">
-                            <div class="mb-3 col-md-6 col-12"><input type="text" placeholder="Enter first name" /></div>
-                            <div class="mb-3 col-md-6 col-12"><input type="text" placeholder="Enter last name" /></div>
-                            <div class="mb-3 col-12"><input type="email" placeholder="Enter email" /></div>
-                            <div class="mb-3 col-12"><input type="password" placeholder="Enter password" /></div>
-                            <div class="mb-3 col-12"><input type="password" placeholder="Enter confirm password" />
+                        <form:form method="post" action="/register" class="row" modelAttribute="registerUser">
+                            <div class="mb-3 col-md-6 col-12">
+                                <c:set var="errorFirstName">
+                                    <form:errors path="firstName" class="input-error-message" />
+                                </c:set>
+                                <form:input type="text" placeholder="Enter first name" path="firstName"
+                                    class="${not empty errorFirstName ? 'input-error' : ''}" />
+                                ${errorFirstName}
+                            </div>
+                            <div class="mb-3 col-md-6 col-12">
+                                <form:input type="text" placeholder="Enter last name" path="lastName" />
+                            </div>
+                            <div class="mb-3 col-12">
+                                <c:set var="errorEmail">
+                                    <form:errors path="email" class="input-error-message" />
+                                </c:set>
+                                <form:input type="email" placeholder="Enter email" path="email"
+                                    class="${not empty errorEmail ? 'input-error' : ''}" />
+                                ${errorEmail}
+                            </div>
+                            <div class="mb-3 col-12">
+                                <c:set var="errorPassword">
+                                    <form:errors path="password" class="input-error-message" />
+                                </c:set>
+                                <form:input type="password" placeholder="Enter password" path="password"
+                                    class="${not empty errorPassword ? 'input-error' : ''}" />
+                                ${errorPassword}
+                            </div>
+                            <div class="mb-3 col-12">
+                                <c:set var="errorConfirmPassword">
+                                    <form:errors path="confirmPassword" class="input-error-message" />
+                                </c:set>
+                                <form:input type="password" placeholder="Enter confirm password"
+                                    class="${not empty errorConfirmPassword ? 'input-error' : ''}"
+                                    path="confirmPassword" />
+                                ${errorConfirmPassword}
                             </div>
                             <div class="mb-3 col-12">
                                 <button type="submit" class="btn--main" style="width: 100%;">Create Account</button>
@@ -86,7 +116,7 @@
                             <div class="mb-3 text-center">
                                 <span>Already have an account? <a class="btn-login" href="/login">Sign In</a></span>
                             </div>
-                        </form>
+                        </form:form>
                     </div>
                 </div>
             </body>
