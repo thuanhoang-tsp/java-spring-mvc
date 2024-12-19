@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
+    --font-size-xs: 12px;
     --font-size-sm: 14px;
     --font-size-md: 16px;
     --font-size-lg: 18px;
@@ -166,6 +167,32 @@ textarea {
     transition: all 0.3s ease-in-out;
 }
 
+.checkbox-antd input[type="checkbox"] {
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-antd input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-antd input[type="checkbox"]:checked::before {
+    content: '✔';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10px;
+}
+
 .textarea-antd {
     height: unset;
 }
@@ -267,4 +294,23 @@ a.link {
 .input-required {
     color: var(--error-color);
     margin-inline-end: 4px;
+}
+
+.checkbox-antd {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-antd input {
+    margin-right: 6px;
+}
+
+.checkbox-antd input:focus {
+    box-shadow: unset;
+}
+
+.checkbox-antd label {
+    width: initial;
+    font-size: var(--font-size-xs);
+    margin-bottom: 0;
 }

@@ -78,17 +78,22 @@
                                 <c:set var="errorFirstName">
                                     <form:errors path="firstName" class="input-error-message" />
                                 </c:set>
+                                <form:label path="firstName"><span class="input-required">*</span>First name:
+                                </form:label>
                                 <form:input type="text" placeholder="Enter first name" path="firstName"
                                     class="${not empty errorFirstName ? 'input-error' : ''}" />
                                 ${errorFirstName}
                             </div>
                             <div class="mb-3 col-md-6 col-12">
+                                <form:label path="firstName">Last name</form:label>
                                 <form:input type="text" placeholder="Enter last name" path="lastName" />
                             </div>
                             <div class="mb-3 col-12">
                                 <c:set var="errorEmail">
                                     <form:errors path="email" class="input-error-message" />
                                 </c:set>
+                                <form:label path="email"><span class="input-required">*</span>Email
+                                </form:label>
                                 <form:input type="email" placeholder="Enter email" path="email"
                                     class="${not empty errorEmail ? 'input-error' : ''}" />
                                 ${errorEmail}
@@ -97,6 +102,8 @@
                                 <c:set var="errorPassword">
                                     <form:errors path="password" class="input-error-message" />
                                 </c:set>
+                                <form:label path="password"><span class="input-required">*</span>Password
+                                </form:label>
                                 <form:input type="password" placeholder="Enter password" path="password"
                                     class="${not empty errorPassword ? 'input-error' : ''}" />
                                 ${errorPassword}
@@ -105,6 +112,8 @@
                                 <c:set var="errorConfirmPassword">
                                     <form:errors path="confirmPassword" class="input-error-message" />
                                 </c:set>
+                                <form:label path="confirmPassword"><span class="input-required">*</span>Confirm password
+                                </form:label>
                                 <form:input type="password" placeholder="Enter confirm password"
                                     class="${not empty errorConfirmPassword ? 'input-error' : ''}"
                                     path="confirmPassword" />

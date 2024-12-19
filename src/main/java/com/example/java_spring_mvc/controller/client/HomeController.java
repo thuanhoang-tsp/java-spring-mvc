@@ -61,8 +61,13 @@ public class HomeController {
         return "redirect:/login";
     }
 
+    @GetMapping("/forgot-password")
+    public String getForgotPasswordPage() {
+        return "client/auth/forgot-password";
+    }
+
     @GetMapping("/login")
-    public String getLoginPage() {
+    public String getLoginPage(Model model) {
         return "client/auth/login";
     }
 }

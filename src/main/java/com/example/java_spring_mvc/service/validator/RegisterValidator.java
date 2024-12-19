@@ -29,7 +29,12 @@ public class RegisterValidator implements ConstraintValidator<RegisterChecked, R
         }
 
         // check email
-        if (userService.checkEmail(user.getEmail())) {
+        if (user.getEmail() == null || user.getEmail().trim().isEmpty()) {
+            context.buildConstraintViolationWithTemplate("Email is required")
+                    .addPropertyNode("email")
+                    .addConstraintViolation();
+            valid = false;
+        } else if (userService.checkEmail(user.getEmail())) {
             context.buildConstraintViolationWithTemplate("Email is existed")
                     .addPropertyNode("email")
                     .addConstraintViolation()
@@ -38,7 +43,12 @@ public class RegisterValidator implements ConstraintValidator<RegisterChecked, R
         }
 
         // Check if password fields match
-        if (!user.getPassword().equals(user.getConfirmPassword())) {
+        if (user.getPassword() == null || user.getPassword().trim().isEmpty()) {
+            context.buildConstraintViolationWithTemplate("Password is required")
+                    .addPropertyNode("password")
+                    .addConstraintViolation();
+            valid = false;
+        } else if (!user.getPassword().equals(user.getConfirmPassword())) {
             context.buildConstraintViolationWithTemplate("Confirm password don't match")
                     .addPropertyNode("confirmPassword")
                     .addConstraintViolation()

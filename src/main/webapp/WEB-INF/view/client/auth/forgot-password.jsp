@@ -6,7 +6,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Login - LaptopShop</title>
+                <title>Forgot password - LaptopShop</title>
                 <link rel="icon" type="image/x-icon" href="/images/favicon.webp">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,13 +28,13 @@
                     height: 100vh;
                 }
 
-                .container-login {
+                .container-fp {
                     background: url('/images/background.png') no-repeat center center;
                     background-size: cover;
                     background-attachment: fixed;
                 }
 
-                .container-login-form {
+                .container-fp-form {
                     background-color: #F6FBF9;
                     border-radius: 32px;
                     padding: 40px 40px 0 40px;
@@ -43,58 +43,27 @@
                     margin: 0 16px;
                 }
 
-                .login-title {
+                .fp-title {
                     padding: 0 30px;
                     margin-bottom: 4px;
                     font-size: 36px;
                 }
 
-                .btn-login {
+                .btn-fp {
                     text-decoration: underline;
                 }
 
-                .btn-login:hover {
+                .btn-fp:hover {
                     color: var(--primary-color)
                 }
             </style>
 
             <body>
-                <div class="container-login flex-center">
-                    <div class="container-login-form">
+                <div class="container-fp flex-center">
+                    <div class="container-fp-form">
                         <div style="margin-bottom: 32px;">
-                            <h1 class="text-center login-title">Login</h1>
+                            <h1 class="text-center fp-title">Forgot password</h1>
                         </div>
-                        <form method="post" action="/login" class="row">
-                            <div class="mb-3 col-12">
-                                <label><span class="input-required">*</span>Email</label>
-                                <input type="email" placeholder="Enter email" />
-                            </div>
-                            <div class="mb-3 col-12">
-                                <label><span class="input-required">*</span>Password
-                                </label>
-                                <input type="password" placeholder="Enter password" />
-                            </div>
-                            <div class="mb-3 col-12 d-flex justify-content-between">
-                                <div class="checkbox-antd">
-                                    <input type="checkbox" id="remember" name="remember">
-                                    <label for="remember">Remember</label>
-                                </div>
-                                <div>
-                                    <a href="/forgot-password"
-                                        style="text-decoration: underline; color: var(--primary-color); font-size: var(--font-size-xs);">Forgot
-                                        password?</a>
-                                </div>
-                            </div>
-                            <div class="mb-3 col-12">
-                                <button type="submit" class="btn--main" style="width: 100%;">Create
-                                    Account</button>
-                            </div>
-                            <div class="mb-3 text-center">
-                                <a class="btn-login" href="/register">Need an account?
-                                    Sign up!
-                                </a>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </body>

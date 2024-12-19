@@ -50,6 +50,11 @@ public class UserController {
     public String createUserPage(Model model, @ModelAttribute("user") @Valid User user, BindingResult userBindingResult,
             @RequestParam("avatarFile") MultipartFile file) {
 
+        if (userService.checkEmail(user.getEmail())) {
+            userBindingResult.rejectValue("email", "error.user", "Email is existed");
+            return "/admin/user/create";
+        }
+
         if (userBindingResult.hasErrors()) {
             return "/admin/user/create";
         }

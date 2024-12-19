@@ -2,10 +2,16 @@ package com.example.java_spring_mvc.domain.dto;
 
 import com.example.java_spring_mvc.service.validator.RegisterChecked;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
+
 @RegisterChecked
 public class RegisterDTO {
+    @Size(min = 3, message = "First name must be at least 3 characters")
     private String firstName;
     private String lastName;
+
+    @Email(message = "Email is not valid", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
     private String email;
     private String password;
     private String confirmPassword;
